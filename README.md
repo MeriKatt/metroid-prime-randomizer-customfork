@@ -1,8 +1,9 @@
-# Metroid Prime Randomizer
+# (Unofficial) Metroid Prime Randomizer Custom version
 
 This application is an item randomizer for the video game Metroid Prime, powered by the [randomprime patcher](https://github.com/aprilwade/randomprime), [Angular](https://angular.io), [TypeScript](https://www.typescriptlang.org), [Node.js](https://nodejs.org) and [Electron](https://electronjs.org).
 
-[Visit website](https://randomizer.metroidprime.run)
+[Visit Official website](https://randomizer.metroidprime.run)
+[Official Randomzier](https://github.com/BashPrime/metroid-prime-randomizer)
 
 ## How it works
 
