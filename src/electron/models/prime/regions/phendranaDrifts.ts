@@ -227,7 +227,8 @@ export function phendranaDrifts(): RegionObject[] {
             return baseReqs;
           }
 
-          return items.canLayBombs() && baseReqs;
+
+          return (settings.tricks.controlTowerEscapeSJ || items.canLayBombs()) && baseReqs;
         },
         'Observatory': (items: PrimeItemCollection, settings: PrimeRandomizerSettings) => {
           const baseReqs = items.hasMissiles() && items.has(PrimeItem.WAVE_BEAM);
@@ -246,7 +247,8 @@ export function phendranaDrifts(): RegionObject[] {
         [PrimeLocation.CONTROL_TOWER]: () => true
       },
       exits: {
-        'Control Tower': (items: PrimeItemCollection) => items.canLayBombs()
+        'Control Tower': (items: PrimeItemCollection, settings: PrimeRandomizerSettings) => items.canLayBombs() 
+        || settings.tricks.controlTowerEscapeSJ && items.has(PrimeItem.SPACE_JUMP_BOOTS)
       }
     },
     {
@@ -307,7 +309,7 @@ export function phendranaDrifts(): RegionObject[] {
       locations: {
         [PrimeLocation.FROST_CAVE]: (items: PrimeItemCollection, settings: PrimeRandomizerSettings) => {
           const grappleReqs = settings.tricks.removePhendranaDepthsGrappleReqs || items.has(PrimeItem.GRAPPLE_BEAM);
-          return grappleReqs && items.hasMissiles() && items.has(PrimeItem.GRAVITY_SUIT)
+          return grappleReqs && items.hasMissiles() && (settings.tricks.removeGravityReqs || items.has(PrimeItem.GRAVITY_SUIT))
             && items.has(PrimeItem.SPACE_JUMP_BOOTS);
         }
       },
@@ -350,7 +352,7 @@ export function phendranaDrifts(): RegionObject[] {
             return baseReqs;
           }
 
-          return items.has(PrimeItem.GRAVITY_SUIT) && baseReqs;
+          return (settings.tricks.removeGravityReqs || items.has(PrimeItem.GRAVITY_SUIT)) && baseReqs;
         },
         'Frozen Pike': (items: PrimeItemCollection, settings: PrimeRandomizerSettings) => {
           const grappleReqs = settings.tricks.removePhendranaDepthsGrappleReqs || items.has(PrimeItem.GRAPPLE_BEAM);
@@ -370,8 +372,8 @@ export function phendranaDrifts(): RegionObject[] {
         }
       },
       exits: {
-        'Hunter Cave': (items: PrimeItemCollection) => items.has(PrimeItem.GRAVITY_SUIT) && items.has(PrimeItem.SPACE_JUMP_BOOTS) && items.has(PrimeItem.WAVE_BEAM),
-        'Frozen Pike': (items: PrimeItemCollection) => items.has(PrimeItem.GRAVITY_SUIT) && items.has(PrimeItem.SPACE_JUMP_BOOTS) && items.has(PrimeItem.WAVE_BEAM)
+        'Hunter Cave': (items: PrimeItemCollection, settings: PrimeRandomizerSettings) => (settings.tricks.removeGravityReqs || items.has(PrimeItem.GRAVITY_SUIT)) && items.has(PrimeItem.SPACE_JUMP_BOOTS) && items.has(PrimeItem.WAVE_BEAM),
+        'Frozen Pike': (items: PrimeItemCollection, settings: PrimeRandomizerSettings) => (settings.tricks.removeGravityReqs || items.has(PrimeItem.GRAVITY_SUIT)) && items.has(PrimeItem.SPACE_JUMP_BOOTS) && items.has(PrimeItem.WAVE_BEAM)
       }
     },
     {

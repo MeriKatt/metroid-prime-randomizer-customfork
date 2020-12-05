@@ -2,104 +2,124 @@ import { SettingsFlags, SettingsFlagsArgs } from '../settingsFlags';
 import { getPaddedBitStringFromSettingsString } from '../../utilities';
 
 export class Tricks extends SettingsFlags {
+  // Tallon
   alcoveNoItems = false;
-  antechamberWithPowerBombs = false;
   arborChamberWithoutPlasma = false;
-  arboretumPuzzleSkip = false;
-  boostThroughBombTunnels = false;
-  chapelOfTheEldersWithPowerBombs = false;
-  chozoIceTempleItemWithIS = false;
-  chozoIceTempleWithoutSpaceJump = false;
   climbFrigateCrashSite = false;
-  climbFrozenPikeWithoutBombs = false;
-  climbObservatoryWithoutBoost = false;
-  climbOreProcessingWithoutGrappleSpider = false;
-  climbPhazonProcessingCenterWithoutSpider = false;
+  greatTreeHallBarsSkip = false;
+  lifeGroveSpinnerWithoutBoostBall = false;
+  lifeGroveTunnelHpbj = false;
+  rootCaveArborChamberWithoutGrapple = false;
+  tallonTransportTunnelCMinimumReqs = false;
+
+  // Chozo
+  antechamberWithPowerBombs = false;
+  arboretumPuzzleSkip = false;
   climbReflectingPoolWithoutBoostBall = false;
-  climbRuinedCourtyardWithoutBoostSpider = false;
   climbTowerOfLightWithoutMissiles = false;
-  crashedFrigateGammaElevatorWithoutGravity = false;
   crossMagmaPoolSuitless = false;
   crossMagmaPoolWithoutGrapple = false;
-  crossTwinFiresTunnelSuitless = false;
-  crossTwinFiresTunnelWithoutSpider = false;
+  crossMagmaPoolWithoutGrappleOrScan = false;
   crosswayHpbj = false;
   crosswayItemFewerReqs = false;
-  destroyBombCoversWithPowerBombs = false;
-  earlyPhendranaBehindIceItemsWithIS = false;
-  eliteResearchInfiniteBoostClip = false;
-  eliteResearchLaserWithoutBoost = false;
-  exitPhendranaCanyonNoItems = false;
-  exitQuarantineCaveRuinedCourtyardSlopeJump = false;
-  fieryShoresAccessWithoutMorphGrapple = false;
-  fieryShoresItemSj = false;
-  frigateCrashSiteItemOnlyScanVisor = false;
-  frigateCrashSiteItemWithoutGravitySuit = false;
   furnaceAccessWithoutSpider = false;
   furnaceSpiderTrackItemHBJ = false;
   furnaceSpiderTrackItemSpaceJumpBombs = false;
   gatheringHallWithoutSpaceJump = false;
-  gravityChamberLedgeItemWithoutGrapplePlasma = false;
-  gravitylessFrigate = false;
-  greatTreeHallBarsSkip = false;
   hallOfTheEldersBombSlotsWithoutSpider = false;
-  hallOfTheEldersItemsWithIS = false;
-  hydroAccessTunnelWithoutGravity = false;
-  iceBeamBeforeFlaahgraOobWallcrawl = false;
-  iceRuinsEastSpiderItemWithoutSpider = false;
-  lateMagmoorNoHeatProtection = false;
-  lavaLakeItemOnlyMissiles = false;
-  lavaLakeItemSuitless = false;
-  lifeGroveSpinnerWithoutBoostBall = false;
-  lifeGroveTunnelHpbj = false;
-  lifeGroveWallcrawl = false;
-  lowerPhazonMineWithoutSpiderGrapple = false;
-  magmaPoolItemWithIS = false;
   mainPlazaGrappleLedgeOnlyGrapple = false;
   mainPlazaHpbj = false;
   mainPlazaItemsOnlySpaceJump = false;
   mainPlazaTreeNoSpaceJump = false;
-  mainQuarryItemWithoutSpider = false;
-  mainQuarryToOreProcessingWithoutGrapple = false;
-  observatoryPuzzleSkip = false;
-  outOfBoundsWithoutMorphBall = false;
-  phazonMiningTunnelItemWithoutPhazonSuit = false;
-  phendranaTransportSouthToTransportAccessWithoutSpider = false;
-  phendranaShorelinesSpidertrackMinRequirements = false;
-  plasmaProcessingFromMagmoorWorkstationOob = false;
-  plasmaProcessingItemWithoutGrappleSpider = false;
   reflectingPoolAccessWithoutWaveBeam = false;
-  removePhendranaDepthsGrappleReqs = false;
-  removeThermalReqs = false;
-  removeXrayReqs = false;
-  rootCaveArborChamberWithoutGrapple = false;
   ruinedFountainItemFlaahgraSkip = false;
   ruinedFountainItemFlaahgraSkipNsj = false;
   ruinedNurseryWithoutBombs = false;
   ruinedShrineScanDashEscape = false;
-  shoreTunnelEscapeWithoutSpaceJump = false;
-  spiderlessShafts = false;
-  suitlessMagmoorRun = false;
-  suitlessMagmoorRunMinimal = false;
   sunTowerIbj = false;
-  quarantineMonitorDash = false;
-  tallonTransportTunnelCMinimumReqs = false;
-  towerChamberNoGravity = false;
   towerOfLightNsj = false;
   towerChamberNsj = false;
-  trainingChamberAndAccessOobWallcrawl = false;
-  triclopsPitItemWithoutSpaceJump = false;
-  triclopsPitItemWithCharge = false;
   upperRuinedShrineTowerOfLightFewerAccessReqs = false;
   vaultAccessFromMainPlaza = false;
   vaultItemNoBombs = false;
-  ventShaftHpbj = false;
+  wateryHallUnderwaterFlaahgraSkip = false;
+
+  // Magmoor
+  crossTwinFiresTunnelSuitless = false;
+  crossTwinFiresTunnelWithoutSpider = false;
+  fieryShoresAccessWithoutMorphGrapple = false;
+  fieryShoresItemSj = false;
+  lateMagmoorNoHeatProtection = false;
+  lavaLakeItemOnlyMissiles = false;
+  lavaLakeItemSuitless = false;
+  plasmaProcessingItemWithoutGrappleSpider = false;
+  shoreTunnelEscapeWithoutSpaceJump = false;
+  suitlessMagmoorRun = false;
+  suitlessMagmoorRunMinimal = false;
+  triclopsPitItemWithoutSpaceJump = false;
+  triclopsPitItemWithCharge = false;
   warriorShrineMinimumReqs = false;
   warriorShrineWithoutBoost = false;
-  wateryHallScanPuzzleWithIS = false;
-  wateryHallUnderwaterFlaahgraSkip = false;
+
+  // Phendrana
+  chapelOfTheEldersWithPowerBombs = false;
+  chozoIceTempleItemWithIS = false;
+  chozoIceTempleWithoutSpaceJump = false;
+  climbFrozenPikeWithoutBombs = false;
+  climbObservatoryWithoutBoost = false;
+  climbRuinedCourtyardWithoutBoostSpider = false;
+  controlTowerEscapeSJ = false;
+  exitPhendranaCanyonNoItems = false;
+  exitQuarantineCaveRuinedCourtyardSlopeJump = false;
+  gravityChamberLedgeItemWithoutGrapplePlasma = false;
+  iceRuinsEastSpiderItemWithoutSpider = false;
+  observatoryPuzzleSkip = false;
+  phendranaTransportSouthToTransportAccessWithoutSpider = false;
+  phendranaShorelinesSpidertrackMinRequirements = false;
+  removePhendranaDepthsGrappleReqs = false;
+  quarantineMonitorDash = false;
+  
+  // Mines
+  climbOreProcessingWithoutGrappleSpider = false;
+  climbPhazonProcessingCenterWithoutSpider = false;
+  eliteResearchInfiniteBoostClip = false;
+  eliteResearchLaserWithoutBoost = false;
+  lowerPhazonMineWithoutSpiderGrapple = false;
+  mainQuarryItemWithoutSpider = false;
+  mainQuarryToOreProcessingWithoutGrapple = false;
+  phazonMiningTunnelItemWithoutPhazonSuit = false;
+  spiderlessShafts = false;
+  ventShaftHpbj = false;
+
+  // All 
+  boostThroughBombTunnels = false;
+  destroyBombCoversWithPowerBombs = false;
+  removeThermalReqs = false;
+  removeXrayReqs = false;
+  
+  // Gravityless
+  crashedFrigateGammaElevatorWithoutGravity = false;
+  frigateCrashSiteItemOnlyScanVisor = false;
+  frigateCrashSiteItemWithoutGravitySuit = false;
+  gravitylessFrigate = false;
+  hydroAccessTunnelWithoutGravity = false;
+  towerChamberNoGravity = false;
   wateryHallUnderwaterSlopeJump = false;
+  removeGravityReqs = false;
+  
+  // IS
+  earlyPhendranaBehindIceItemsWithIS = false;
+  hallOfTheEldersItemsWithIS = false;
+  magmaPoolItemWithIS = false;
+  wateryHallScanPuzzleWithIS = false;
   waveSunOobWallcrawlWithIS = false;
+  
+  // OoB
+  iceBeamBeforeFlaahgraOobWallcrawl = false;
+  lifeGroveWallcrawl = false;
+  outOfBoundsWithoutMorphBall = false;
+  plasmaProcessingFromMagmoorWorkstationOob = false;
+  trainingChamberAndAccessOobWallcrawl = false;
 
   constructor(args?: SettingsFlagsArgs) {
     super();

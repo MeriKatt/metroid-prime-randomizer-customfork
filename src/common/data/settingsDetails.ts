@@ -250,6 +250,11 @@ export const details: SettingsDetails = {
     You still need missiles to reach this room inbounds.`,
     difficulty: Difficulty.EASY
   },
+  controlTowerEscapeSJ: {
+    name: 'Control Tower Escape with only SJ',
+    description: `Using a jank slope jump you can escape control tower's item with only SJ.`,
+    difficulty: Difficulty.NORMAL
+  },
   crashedFrigateGammaElevatorWithoutGravity: {
     name: 'Crashed Frigate - Gamma Elevator Item without Gravity Suit',
     description: `In-game, there's nothing stopping you from entering (and leaving) the front side of the crashed frigate without Gravity Suit.`,
@@ -265,6 +270,13 @@ export const details: SettingsDetails = {
   crossMagmaPoolWithoutGrapple: {
     name: 'Cross Magma Pool without Grapple Beam',
     description: `You can scan dash off the crate items to cross Magma Pool with only Space Jump.
+
+    This logic does not expect you to slope jump out of the lava with Gravity Suit.`,
+    difficulty: Difficulty.NORMAL
+  },
+  crossMagmaPoolWithoutGrappleOrScan: {
+    name: 'Cross Magma Pool without Grapple Beam or Scan Visor',
+    description: `You can R-Jump to standable terrain and again to cross Magma Pool with only Space Jump.
 
     This logic does not expect you to slope jump out of the lava with Gravity Suit.`,
     difficulty: Difficulty.NORMAL
@@ -529,6 +541,11 @@ export const details: SettingsDetails = {
     name: 'Reflecting Pool Access Without Wave Beam',
     description: `In Hall of the Elders, you can Hyper Bomb Jump (HBJ) to the morph ball track and reach the door to Reflecting Pool Access.`,
     difficulty: Difficulty.NORMAL
+  },
+  removeGravityReqs: {
+    name: 'Remove Gravity Requirements',
+    description: `You will not be required to have Gravity Suit for any underwater checks or accessing areas from water. (Note: this does not include tower chamber if you dont have SJ)`,
+    difficulty: Difficulty.HARD
   },
   removePhendranaDepthsGrappleReqs: {
     name: 'Remove Phendrana Depths Grapple Requirements',

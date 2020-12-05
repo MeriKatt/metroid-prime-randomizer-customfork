@@ -169,7 +169,7 @@ export function chozoRuins(): RegionObject[] {
          || (settings.tricks.climbTowerOfLightWithoutMissiles || items.hasMissileCount(8))
           && items.has(PrimeItem.SPACE_JUMP_BOOTS),
         [PrimeLocation.TOWER_CHAMBER]: (items: PrimeItemCollection, settings: PrimeRandomizerSettings) => {
-          const gravityReqs = items.has(PrimeItem.GRAVITY_SUIT) || settings.tricks.towerChamberNoGravity;
+          const gravityReqs = items.has(PrimeItem.GRAVITY_SUIT) || (settings.tricks.removeGravityReqs || settings.tricks.towerChamberNoGravity);
           const sjReqs = gravityReqs && items.has(PrimeItem.WAVE_BEAM) && items.has(PrimeItem.SPACE_JUMP_BOOTS);
           return (items.has(PrimeItem.GRAVITY_SUIT) && items.canLayBombs() && settings.tricks.towerChamberNsj)
            || sjReqs;
@@ -259,11 +259,14 @@ export function chozoRuins(): RegionObject[] {
             return items.hasSuit(settings) && items.canInfiniteSpeed();
           }
 
-          const suitlessReqs = settings.tricks.crossMagmaPoolSuitless && items.hasCount(PrimeItem.ENERGY_TANK, 2) && items.has(PrimeItem.SPACE_JUMP_BOOTS) && items.has(PrimeItem.SCAN_VISOR);
+          const suitlessReqs = settings.tricks.crossMagmaPoolSuitless && 
+          (items.hasCount(PrimeItem.ENERGY_TANK, 2) && items.has(PrimeItem.SPACE_JUMP_BOOTS) && items.has(PrimeItem.SCAN_VISOR) 
+          || items.hasCount(PrimeItem.ENERGY_TANK, 3) && items.has(PrimeItem.SPACE_JUMP_BOOTS) && settings.tricks.crossMagmaPoolWithoutGrappleOrScan);
 
-          const grappleReqs = settings.tricks.crossMagmaPoolWithoutGrapple
-            ? items.has(PrimeItem.SPACE_JUMP_BOOTS) && items.has(PrimeItem.SCAN_VISOR)
-            : items.has(PrimeItem.GRAPPLE_BEAM);
+          const grappleReqs = (settings.tricks.crossMagmaPoolWithoutGrapple 
+          && (items.has(PrimeItem.SPACE_JUMP_BOOTS) && items.has(PrimeItem.SCAN_VISOR)))
+          || (settings.tricks.crossMagmaPoolWithoutGrappleOrScan &&  items.has(PrimeItem.SPACE_JUMP_BOOTS))
+          || items.has(PrimeItem.GRAPPLE_BEAM);
 
           return suitlessReqs || (grappleReqs && items.hasSuit(settings));
         },
@@ -376,7 +379,7 @@ export function chozoRuins(): RegionObject[] {
           }
 
           const bombsReqs = items.canLayBombs() || settings.tricks.wateryHallUnderwaterFlaahgraSkip;
-          const gravityReqs = items.has(PrimeItem.GRAVITY_SUIT) || settings.tricks.wateryHallUnderwaterSlopeJump;
+          const gravityReqs = items.has(PrimeItem.GRAVITY_SUIT) || (settings.tricks.removeGravityReqs || settings.tricks.wateryHallUnderwaterSlopeJump);
           return bombsReqs && gravityReqs && items.has(PrimeItem.SPACE_JUMP_BOOTS);
         }
       },
@@ -406,7 +409,7 @@ export function chozoRuins(): RegionObject[] {
             return items.has(PrimeItem.MORPH_BALL);
           }
 
-          return items.canLayBombs();
+          return items.canLayBombs() || (settings.tricks.boostThroughBombTunnels && items.canBoost());
         },
         'Furnace (Spider Track and Tunnel)': (items: PrimeItemCollection) => items.canLayBombs(),
         'Gathering Hall': () => true
@@ -422,7 +425,7 @@ export function chozoRuins(): RegionObject[] {
         }
       },
       exits: {
-        'Energy Core': (items: PrimeItemCollection) => items.canLayBombs()
+        'Energy Core': (items: PrimeItemCollection, settings: PrimeRandomizerSettings) => items.canLayBombs() || (settings.tricks.boostThroughBombTunnels && items.canBoost())
       }
     },
     {
