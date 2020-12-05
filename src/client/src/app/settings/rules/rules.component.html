@@ -1,0 +1,180 @@
+<form [formGroup]="getFormGroup()">
+  <div class="columns is-multiline">
+    <div class="column is-one-third">
+      <div class="field">
+        <label class="label is-small">{{ getDisplayName('goal') }}</label>
+        <div class="control">
+          <div class="select is-small" [pTooltip]="DETAILS.goal.description" tooltipStyleClass="is-wide-tooltip">
+            <select formControlName="goal">
+              <option *ngFor="let choice of getChoices('goal')" value="{{ choice.value }}">{{ choice.name }}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="column is-one-third">
+      <div class="field">
+        <label class="label is-small">{{ getDisplayName('goalArtifacts') }}</label>
+        <div class="control">
+          <div class="select is-small" [pTooltip]="DETAILS.goalArtifacts.description">
+            <select formControlName="goalArtifacts">
+              <option *ngFor="let choice of getChoices('goalArtifacts')" [ngValue]="choice.value">
+                {{ choice.name }}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="column is-one-third">
+      <div class="field">
+        <label class="label is-small">{{ getDisplayName('artifactLocationHints') }}</label>
+        <div class="control">
+          <input class="is-checkradio" id="artifactLocationHints" type="checkbox"
+            formControlName="artifactLocationHints">
+          <label for="artifactLocationHints" [pTooltip]="DETAILS.artifactLocationHints.description"
+            tooltipStyleClass="is-wide-tooltip"></label>
+        </div>
+      </div>
+    </div>
+    <div class="column is-one-third">
+      <div class="field">
+        <label class="label is-small">{{ getDisplayName('shuffleMode') }}</label>
+        <div class="control">
+          <div class="select is-small" [pTooltip]="DETAILS.shuffleMode.description"
+            tooltipStyleClass="is-wide-tooltip">
+            <select formControlName="shuffleMode">
+              <option *ngFor="let choice of getChoices('shuffleMode')" [ngValue]="choice.value">
+                {{ choice.name }}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="column is-one-third">
+      <div class="field">
+        <label class="label is-small">{{ getDisplayName('heatProtection') }}</label>
+        <div class="control">
+          <div class="select is-small" [pTooltip]="DETAILS.heatProtection.description"
+            tooltipStyleClass="is-wide-tooltip">
+            <select formControlName="heatProtection">
+              <option *ngFor="let choice of getChoices('heatProtection')" value="{{ choice.value }}">
+                {{ choice.name }}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="column is-one-third">
+      <div class="field">
+        <label class="label is-small">{{ getDisplayName('suitDamageReduction') }}</label>
+        <div class="control">
+          <div class="select is-small" [pTooltip]="DETAILS.suitDamageReduction.description"
+            tooltipStyleClass="is-wide-tooltip">
+            <select formControlName="suitDamageReduction">
+              <option *ngFor="let choice of getChoices('suitDamageReduction')" value="{{ choice.value }}">
+                {{ choice.name }}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="column is-one-third">
+      <div class="field">
+        <label class="label is-small">{{ getDisplayName('pointOfNoReturnItems') }}</label>
+        <div class="control">
+          <div class="select is-small" [pTooltip]="DETAILS.pointOfNoReturnItems.description"
+            tooltipStyleClass="is-wide-tooltip">
+            <select formControlName="pointOfNoReturnItems">
+              <option *ngFor="let choice of getChoices('pointOfNoReturnItems')" value="{{ choice.value }}">
+                {{ choice.name }}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="column is-one-third">
+      <div class="field">
+        <label class="label is-small">{{ getDisplayName('elevatorShuffle') }}</label>
+        <div class="control">
+          <input class="is-checkradio" id="elevatorShuffle" type="checkbox" formControlName="elevatorShuffle">
+          <label for="elevatorShuffle" [pTooltip]="DETAILS.elevatorShuffle.description"></label>
+        </div>
+      </div>
+    </div>
+    <div class="column is-one-third">
+      <div class="field">
+        <label class="label is-small">{{ getDisplayName('startingArea') }}</label>
+        <div class="control">
+          <div class="select is-small" [pTooltip]="DETAILS.startingArea.description"
+            tooltipStyleClass="is-wide-tooltip">
+            <select formControlName="startingArea">
+              <option *ngFor="let choice of getChoices('startingArea')" [ngValue]="choice.value">
+                {{ choice.name }}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="column is-one-third">
+      <div class="field">
+        <label class="label is-small">{{ getDisplayName('junkItems') }}</label>
+        <div class="control">
+          <div class="select is-small" [pTooltip]="DETAILS.junkItems.description" tooltipStyleClass="is-wide-tooltip">
+            <select formControlName="junkItems">
+              <option *ngFor="let choice of getChoices('junkItems')" [ngValue]="choice.value">
+                {{ choice.name }}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div formGroupName="randomStartingItems">
+    <label class="label" [pTooltip]="DETAILS.randomStartingItems.description"
+      tooltipStyleClass="is-wide-tooltip">Randomized Starting Items</label>
+    <div class="columns">
+      <div class="column is-one-third">
+        <div class="field">
+          <label class="label is-small">Minimum</label>
+          <div class="control">
+            <input class="input is-small" type="number" formControlName="minimum"
+              [pTooltip]="DETAILS.randomStartingItems.items.minimum.description">
+            <div *ngIf="getRandomStartingItemsFormGroup().controls.minimum.errors">
+              <p class="help is-danger" *ngIf="getRandomStartingItemsFormGroup().controls.minimum.errors.required">You
+                must set a minimum value.</p>
+              <p class="help is-danger" *ngIf="getRandomStartingItemsFormGroup().controls.minimum.errors.min">Minimum
+                count is 0.</p>
+              <p class="help is-danger" *ngIf="getRandomStartingItemsFormGroup().controls.minimum.errors.max">Maximum
+                count is 25.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column is-one-third">
+        <div class="field">
+          <label class="label is-small">Maximum</label>
+          <div class="control">
+            <input class="input is-small" type="number" formControlName="maximum"
+              [pTooltip]="DETAILS.randomStartingItems.items.maximum.description">
+            <div *ngIf="getRandomStartingItemsFormGroup().controls.maximum.errors">
+              <p class="help is-danger" *ngIf="getRandomStartingItemsFormGroup().controls.maximum.errors.required">You
+                must set a maximum value.</p>
+              <p class="help is-danger" *ngIf="getRandomStartingItemsFormGroup().controls.maximum.errors.min">Minimum
+                count is 0.</p>
+              <p class="help is-danger" *ngIf="getRandomStartingItemsFormGroup().controls.maximum.errors.max">Maximum
+                count is 25.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
