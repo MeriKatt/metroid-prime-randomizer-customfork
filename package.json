@@ -1,8 +1,8 @@
 {
-  "name": "metroid-prime-randomizer",
-  "version": "2.5.0",
-  "description": "Metroid Prime Randomizer",
-  "homepage": "https://github.com/BashPrime/metroid-prime-randomizer",
+  "name": "metroid-prime-randomizer-custom",
+  "version": "1.2.0",
+  "description": "Metroid Prime Randomizer Custom",
+  "homepage": "https://github.com/MeriKatt/metroid-prime-randomizer-customfork",
   "contributors": [
     {
       "name": "BashPrime"
@@ -12,6 +12,9 @@
     },
     {
       "name": "April Wade"
+    },
+    {
+      "name": "MeriKatt"
     }
   ],
   "keywords": [

@@ -442,6 +442,11 @@ export const details: SettingsDetails = {
     description: `You can half pipe bomb jump to reach either side of Life Grove Tunnel without Boost Ball.`,
     difficulty: Difficulty.HARD
   },
+  lifeGroveWallcrawl: {
+    name: 'Life Grove Wallcrawl',
+    description: `By going out of bounds in Great Tree Chamber you can wallcrawl to lifegrove. (Note: With this enabled logic can expect you to grab the spinner item from OoB and leave.)`,
+    difficulty: Difficulty.INSANE
+  },
   lowerPhazonMineWithoutSpiderGrapple: {
     name: 'Lower Phazon Mines without Spider Ball, Grapple Beam',
     description: `Using R jumps, slope jumps, and dashes, you can traverse the entirety of lower Phazon Mines without Spider Ball and Grapple Beam.`,
@@ -504,6 +509,11 @@ export const details: SettingsDetails = {
     name: 'Phendrana Transport South to Transport Access without Spider Ball',
     description: `You can Space Jump onto one of the poles and jump onto the top of the spider track to reach the door.`,
     difficulty: Difficulty.TRIVIAL
+  },
+  phendranaShorelinesSpidertrackMinRequirements: {
+    name: 'Phendrana Shorelines Spidertrack Item (Minimum Requirements)',
+    description: `You can reach the spider track nsj without bombs with a few well placed dashes.`,
+    difficulty: Difficulty.NORMAL
   },
   plasmaProcessingFromMagmoorWorkstationOob: {
     name: 'Plasma Processing from Magmoor Workstation (Out of Bounds)',
@@ -614,6 +624,16 @@ export const details: SettingsDetails = {
     name: 'Tower Chamber without Gravity Suit',
     description: `The ledge can be reached by underwater slope jumping to the door without the Gravity Suit equipped.`,
     difficulty: Difficulty.TRIVIAL
+  },
+  towerOfLightNsj: {
+    name: 'Tower of Light no Space Jump',
+    description: `The item at the top can be grabbed with a series of double bomb jumps if you have the missiles for it.`,
+    difficulty: Difficulty.EASY
+  },
+  towerChamberNsj: {
+    name: 'Tower Chamber no Space Jump',
+    description: `The ledge can be reached by double bomb jumping and unmorphing at the peak with gravity.`,
+    difficulty: Difficulty.EASY
   },
   trainingChamberAndAccessOobWallcrawl: {
     name: 'Reach Training Chamber (and Access) from Out of Bounds',

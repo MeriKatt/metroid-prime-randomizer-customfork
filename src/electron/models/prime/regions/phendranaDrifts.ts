@@ -20,7 +20,7 @@ export function phendranaDrifts(): RegionObject[] {
           return infiniteSpeedReqs || items.has(PrimeItem.PLASMA_BEAM);
         },
         [PrimeLocation.PHENDRANA_SHORELINES_SPIDER_TRACK]: (items: PrimeItemCollection, settings: PrimeRandomizerSettings) => {
-          const sjReqs = items.has(PrimeItem.SPACE_JUMP_BOOTS) || (settings.tricks.chozoIceTempleWithoutSpaceJump && items.canLayBombs());
+          const sjReqs = items.has(PrimeItem.SPACE_JUMP_BOOTS) || (settings.tricks.phendranaShorelinesSpidertrackMinRequirements || settings.tricks.chozoIceTempleWithoutSpaceJump && items.canLayBombs());
           return sjReqs && items.canFireSuperMissiles() && items.canSpider() && items.has(PrimeItem.SCAN_VISOR);
         },
       },

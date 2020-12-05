@@ -52,6 +52,7 @@ export class Tricks extends SettingsFlags {
   lavaLakeItemSuitless = false;
   lifeGroveSpinnerWithoutBoostBall = false;
   lifeGroveTunnelHpbj = false;
+  lifeGroveWallcrawl = false;
   lowerPhazonMineWithoutSpiderGrapple = false;
   magmaPoolItemWithIS = false;
   mainPlazaGrappleLedgeOnlyGrapple = false;
@@ -64,6 +65,7 @@ export class Tricks extends SettingsFlags {
   outOfBoundsWithoutMorphBall = false;
   phazonMiningTunnelItemWithoutPhazonSuit = false;
   phendranaTransportSouthToTransportAccessWithoutSpider = false;
+  phendranaShorelinesSpidertrackMinRequirements = false;
   plasmaProcessingFromMagmoorWorkstationOob = false;
   plasmaProcessingItemWithoutGrappleSpider = false;
   reflectingPoolAccessWithoutWaveBeam = false;
@@ -83,6 +85,8 @@ export class Tricks extends SettingsFlags {
   quarantineMonitorDash = false;
   tallonTransportTunnelCMinimumReqs = false;
   towerChamberNoGravity = false;
+  towerOfLightNsj = false;
+  towerChamberNsj = false;
   trainingChamberAndAccessOobWallcrawl = false;
   triclopsPitItemWithoutSpaceJump = false;
   triclopsPitItemWithCharge = false;

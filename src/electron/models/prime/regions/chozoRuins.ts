@@ -165,10 +165,14 @@ export function chozoRuins(): RegionObject[] {
     {
       name: 'Tower of Light',
       locations: {
-        [PrimeLocation.TOWER_OF_LIGHT]: (items: PrimeItemCollection, settings: PrimeRandomizerSettings) => (settings.tricks.climbTowerOfLightWithoutMissiles || items.hasMissileCount(8)) && items.has(PrimeItem.SPACE_JUMP_BOOTS),
+        [PrimeLocation.TOWER_OF_LIGHT]: (items: PrimeItemCollection, settings: PrimeRandomizerSettings) => settings.tricks.towerOfLightNsj && items.canLayBombs() && items.hasMissileCount(8)
+         || (settings.tricks.climbTowerOfLightWithoutMissiles || items.hasMissileCount(8))
+          && items.has(PrimeItem.SPACE_JUMP_BOOTS),
         [PrimeLocation.TOWER_CHAMBER]: (items: PrimeItemCollection, settings: PrimeRandomizerSettings) => {
           const gravityReqs = items.has(PrimeItem.GRAVITY_SUIT) || settings.tricks.towerChamberNoGravity;
-          return gravityReqs && items.has(PrimeItem.WAVE_BEAM) && items.has(PrimeItem.SPACE_JUMP_BOOTS);
+          const sjReqs = gravityReqs && items.has(PrimeItem.WAVE_BEAM) && items.has(PrimeItem.SPACE_JUMP_BOOTS);
+          return (items.has(PrimeItem.GRAVITY_SUIT) && items.canLayBombs() && settings.tricks.towerChamberNsj)
+           || sjReqs;
         }
       },
       exits: {
