@@ -64,6 +64,10 @@ export function tallonOverworld(): RegionObject[] {
           return items.has(PrimeItem.MORPH_BALL) && items.has(PrimeItem.WAVE_BEAM) && items.has(PrimeItem.ICE_BEAM) && thermalReqs
             && gravityReqs && items.has(PrimeItem.SPACE_JUMP_BOOTS);
         },
+        'Great Tree Hall (Lower)': (items: PrimeItemCollection, settings: PrimeRandomizerSettings) => {
+          const gravitylessReqs = items.has(PrimeItem.SPACE_JUMP_BOOTS) && items.has(PrimeItem.ICE_BEAM) && items.has(PrimeItem.WAVE_BEAM) && items.canBoost();
+          return gravitylessReqs &&settings.tricks.gravitylessFrigate;
+        },
         // Only an exit if climb frigate crash site is true
         'Overgrown Cavern': (items: PrimeItemCollection, settings: PrimeRandomizerSettings) => {
           return settings.tricks.climbFrigateCrashSite && items.has(PrimeItem.MORPH_BALL) && items.has(PrimeItem.ICE_BEAM)
@@ -195,6 +199,10 @@ export function tallonOverworld(): RegionObject[] {
           }
 
           return (settings.tricks.removeThermalReqs || items.has(PrimeItem.THERMAL_VISOR)) && baseReqs;
+        },
+        'Frigate Crash Site': (items: PrimeItemCollection, settings: PrimeRandomizerSettings) => {
+          const gravitylessReqs = items.has(PrimeItem.SPACE_JUMP_BOOTS) && items.has(PrimeItem.WAVE_BEAM) && items.has(PrimeItem.ICE_BEAM) && items.canBoost();
+          return gravitylessReqs && settings.tricks.gravitylessFrigate;
         },
         'Great Tree Hall (Upper)': (items: PrimeItemCollection, settings: PrimeRandomizerSettings) => {
           const boostReqs = items.canBoost() || (settings.tricks.greatTreeHallBarsSkip && items.canLayBombs());

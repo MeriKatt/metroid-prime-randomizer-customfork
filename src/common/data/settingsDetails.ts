@@ -373,6 +373,11 @@ export const details: SettingsDetails = {
     description: `You can R jump to reach the ledge without Grapple and Plasma Beam.`,
     difficulty: Difficulty.NORMAL
   },
+  gravitylessFrigate: {
+    name: 'Crashed Frigate without Gravity',
+    description: `You can go through Crashed Frigate without gravity with Ice Beam, Wave Beam, and Boost. (Note that this trick also expects SJ)`,
+    difficulty: Difficulty.HARD
+  },
   greatTreeHallBarsSkip: {
     name: 'Great Tree Hall - Bars Skip',
     description: 'You can double bomb jump over the bars from either side (the logic also expects this) in Great Tree Hall.',
@@ -544,6 +549,11 @@ export const details: SettingsDetails = {
     description: `You can reach the Spider Ball track before defeating Flaahgra by abusing standable terrain, jumping to the track, and morphing.`,
     difficulty: Difficulty.NORMAL
   },
+  ruinedFountainItemFlaahgraSkipNsj: {
+    name: 'Ruined Fountain Flaahgra Skip no Space Jump',
+    description: `You can reach the Spider Ball track before defeating Flaahgra by abusing standable terrain, dashing to the track, and morphing.`,
+    difficulty: Difficulty.NORMAL
+  },
   ruinedNurseryWithoutBombs: {
     name: 'Ruined Nursery without Bombs',
     description: `You can space jump and morph near the item, and enter the tunnel to obtain it without bombs.
@@ -633,6 +643,11 @@ export const details: SettingsDetails = {
     name: 'Vault Access from Main Plaza',
     description: `Vault will be considered reachable in logic from Main Plaza if this trick and if "Enable Main Plaza Ledge Door" are both enabled.`,
     difficulty: Difficulty.TRIVIAL
+  },
+  vaultItemNoBombs: {
+    name: 'Vault Without Bombs',
+    description: `You can get the item in Vault with just space jump, boost, and power bombs. Requires "Valut Access from Main Plaza" trick and "Enable Main Plaza Ledge Door".`,
+    difficulty: Difficulty.HARD
   },
   ventShaftHpbj: {
     name: 'Ventilation Shaft - Half Pipe Bomb Jump',

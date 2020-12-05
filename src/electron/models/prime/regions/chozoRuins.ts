@@ -110,7 +110,10 @@ export function chozoRuins(): RegionObject[] {
     {
       name: 'Vault',
       locations: {
-        [PrimeLocation.VAULT]: (items: PrimeItemCollection) => items.canLayBombs()
+        [PrimeLocation.VAULT]: (items: PrimeItemCollection) => {
+          const trickReqs = items.has(PrimeItem.BOOST_BALL) && (items.has(PrimeItem.POWER_BOMB) || items.hasCount(PrimeItem.POWER_BOMB_EXPANSION, 4));
+          return trickReqs || items.canLayBombs();
+        }
       },
       exits: {
         'Main Plaza Locked Door Ledge': () => true,
@@ -177,14 +180,14 @@ export function chozoRuins(): RegionObject[] {
       locations: {
         [PrimeLocation.RUINED_FOUNTAIN]: (items: PrimeItemCollection, settings: PrimeRandomizerSettings) => {
           // If Flaahgra skip and the location are disabled, don't allow any items to be placed here
-          if (!settings.tricks.ruinedFountainItemFlaahgraSkip && settings.excludeLocations[PrimeLocation.SUNCHAMBER_FLAAHGRA]) {
+          if (!settings.tricks.ruinedFountainItemFlaahgraSkip && !settings.tricks.ruinedFountainItemFlaahgraSkipNsj && settings.excludeLocations[PrimeLocation.SUNCHAMBER_FLAAHGRA]) {
             return false;
           }
 
           //Added check to see if flaahgra can be reached first.
           const flaahgraReqs = items.hasMissiles() && (settings.tricks.arboretumPuzzleSkip || items.has(PrimeItem.SCAN_VISOR));
           
-          const bombsReqs = items.canLayBombs() && flaahgraReqs || (settings.tricks.ruinedFountainItemFlaahgraSkip && items.has(PrimeItem.SPACE_JUMP_BOOTS));
+          const bombsReqs = items.canLayBombs() && flaahgraReqs || (settings.tricks.ruinedFountainItemFlaahgraSkipNsj || settings.tricks.ruinedFountainItemFlaahgraSkip && items.has(PrimeItem.SPACE_JUMP_BOOTS));
           return bombsReqs && items.canSpider();
         }
       },

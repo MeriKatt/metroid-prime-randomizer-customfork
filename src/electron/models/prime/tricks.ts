@@ -40,6 +40,7 @@ export class Tricks extends SettingsFlags {
   furnaceSpiderTrackItemSpaceJumpBombs = false;
   gatheringHallWithoutSpaceJump = false;
   gravityChamberLedgeItemWithoutGrapplePlasma = false;
+  gravitylessFrigate = false;
   greatTreeHallBarsSkip = false;
   hallOfTheEldersBombSlotsWithoutSpider = false;
   hallOfTheEldersItemsWithIS = false;
@@ -71,6 +72,7 @@ export class Tricks extends SettingsFlags {
   removeXrayReqs = false;
   rootCaveArborChamberWithoutGrapple = false;
   ruinedFountainItemFlaahgraSkip = false;
+  ruinedFountainItemFlaahgraSkipNsj = false;
   ruinedNurseryWithoutBombs = false;
   ruinedShrineScanDashEscape = false;
   shoreTunnelEscapeWithoutSpaceJump = false;
@@ -86,6 +88,7 @@ export class Tricks extends SettingsFlags {
   triclopsPitItemWithCharge = false;
   upperRuinedShrineTowerOfLightFewerAccessReqs = false;
   vaultAccessFromMainPlaza = false;
+  vaultItemNoBombs = false;
   ventShaftHpbj = false;
   warriorShrineMinimumReqs = false;
   warriorShrineWithoutBoost = false;
